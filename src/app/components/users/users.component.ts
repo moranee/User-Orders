@@ -36,7 +36,6 @@ export class UsersComponent implements OnInit {
   }
 
   openDialog() {
-    //this.currentUser = { id: 0, name: '' };
     this.showDialog = true;
   }
 
