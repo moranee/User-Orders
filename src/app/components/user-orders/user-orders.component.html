@@ -1,0 +1,16 @@
+@if (selectedUser$ | async ; as selectedUser) {
+<div class="container">
+    <div class="header">{{ selectedUser.name }} Orders:</div>
+    <div class="orders">
+        @for (order of ordersForSelectedUser$ | async; track order.id) {
+        <div class="item-row">
+            Order #{{ order.id }} Total: {{ order.total }}$
+        </div>
+        }
+
+        @if(!(ordersForSelectedUser$ | async)?.length){
+            <div class="item-row">User don't have any order</div>
+        }
+    </div>
+</div>
+}

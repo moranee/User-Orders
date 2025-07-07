@@ -1,0 +1,21 @@
+<div class="page-container">
+    <div class="container">
+        <div class="header actions">
+            <div>Users</div>
+            <button class="button"(click)="openDialog()">Add</button>
+        </div>
+        <div class="users">
+            @for (user of users$ | async; track user.id) {
+                <div class="item-row" (click)="onUserClick(user.id)">
+                    {{ user.name }}
+                </div>
+            }
+        </div>
+    </div>
+    
+    @if (selectedUser$ | async ; as selectedUser) {
+        <user-orders class="container"></user-orders>
+    }
+</div>
+<user-dialog *ngIf="showDialog" (save)="onSaveUser($event)"  (cancel)="onCancelDialog()"></user-dialog>
+

@@ -1,0 +1,58 @@
+    .dialog-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.4);
+
+        .dialog-box {
+            background-color: var(--main-color);
+            border: 1px solid white;
+            border-radius: 8px;
+            min-width: 300px;
+            display: flex;
+            flex-direction: column;
+
+            .form-container {
+                display: flex;
+                flex-direction: column;
+                padding: 20px;
+                box-sizing: border-box;
+
+                input{
+                    outline: none;
+                    margin: 5px 0px;
+                }
+            }
+
+            .actions {
+                display: flex;
+                justify-content: space-between;
+                padding: 20px;
+                box-sizing: border-box;
+
+                .green {
+                    border: 1px solid var(--green-btn-color);
+                    color: var(--green-btn-color);
+
+                    &:hover {
+                        background-color: var(--green-btn-hover);
+                    }
+                }
+
+                .red {
+                    border: 1px solid var(--red-btn-color);
+                    color: var(--red-btn-color);
+
+                    &:hover {
+                        background-color: var(--red-btn-hover);
+                    }
+                }
+            }
+
+        }
+    }
